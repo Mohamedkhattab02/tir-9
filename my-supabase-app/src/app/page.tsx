@@ -167,7 +167,7 @@ export default async function Page() {
                     <p className="font-mono text-xs text-blue-300 truncate mb-1">
                       {log.ip_address === "::1" ||
                       log.ip_address === "127.0.0.1"
-                        ? "🏠 Ilya Zeldner"
+                        ? "🏠 Mohamed khattab"
                         : log.ip_address}
                     </p>
                   </div>
