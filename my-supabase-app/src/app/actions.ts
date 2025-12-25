@@ -66,15 +66,16 @@ export async function getLikes(): Promise<number> {
     .from("likes")
     .select("count")
     .eq("id", 1)
-    .single();
+    .limit(1);
 
-  if (error) {
-    console.error("❌ Fetch likes error:", error.message);
+  if (error || !data || data.length === 0) {
+    console.error("getLikes failed", error);
     return 0;
   }
 
-  return data?.count ?? 0;
+  return data[0].count ?? 0;
 }
+
 
 
 export async function incrementLikes(): Promise<void> {
